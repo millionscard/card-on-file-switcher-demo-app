@@ -2,18 +2,25 @@ import React, {useEffect, useState} from 'react';
 import {faker} from '@faker-js/faker';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {
-  openCardOnFileSwitcher,
-  openSubscriptionCanceler,
   addListener,
   eventNames,
+  openCardOnFileSwitcher,
+  openSubscriptionCanceler,
 } from 'react-native-knotapi';
-import {createNewSession, registerUser} from './api/axios';
+import {useDispatch, useSelector} from 'react-redux';
+import {login} from './store/actions';
 import Config from 'react-native-config';
 
 export default function App() {
   const [isCardSwitcherLoading, setIsCardSwitcherLoading] = useState(false);
   const [isSubscriptionCancelerLoading, setIsSubscriptionCancelerLoading] =
     useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState('cardSwitcher');
+  const dispatch = useDispatch();
+  // @ts-ignore
+  const {sessionId} = useSelector(state => state.auth);
+
   useEffect(() => {
     // @ts-ignore
     const listener = addListener(eventNames.onEvent, event => {
@@ -25,21 +32,22 @@ export default function App() {
     };
   }, []);
 
-  const onPressOpen = async (
-    product: 'cardSwitcher' | 'subscriptionCanceler',
-  ) => {
-    if (product === 'subscriptionCanceler') {
+  useEffect(() => {
+    if (sessionId && buttonClicked) {
+      setButtonClicked(false);
+      onPressOpen();
+    }
+  }, [sessionId, buttonClicked]);
+
+  const onPressOpen = () => {
+    setButtonClicked(true);
+    if (selectedProduct === 'subscriptionCanceler') {
       setIsSubscriptionCancelerLoading(true);
     }
-    if (product === 'cardSwitcher') {
+    if (selectedProduct === 'cardSwitcher') {
       setIsCardSwitcherLoading(true);
     }
-    let customization = {
-      primaryColor: '#5b138c',
-      textColor: '#e0e0e0',
-      companyName: 'Millions',
-    };
-    const useData = {
+    const userData = {
       first_name: faker.name.firstName(),
       last_name: faker.name.lastName(),
       email: faker.internet.email(),
@@ -52,13 +60,24 @@ export default function App() {
       postal_code: faker.address.zipCode(),
     };
 
+    if (sessionId) {
+      openKnotSDK();
+    } else {
+      dispatch(login(userData));
+    }
+  };
+
+  const openKnotSDK = async () => {
+    let customization = {
+      primaryColor: '#5b138c',
+      textColor: '#e0e0e0',
+      companyName: 'Millions',
+    };
+
     try {
-      await registerUser(useData);
-      const {session} = await createNewSession();
-      console.log({session});
-      if (product === 'cardSwitcher') {
+      if (selectedProduct === 'cardSwitcher') {
         await openCardOnFileSwitcher({
-          sessionId: session,
+          sessionId,
           clientId: Config.KNOTAPI_CLIENT_ID || '',
           environment:
             Config.KNOTAPI_ENVIRONMENT === 'production'
@@ -67,9 +86,9 @@ export default function App() {
           customization,
         });
       }
-      if (product === 'subscriptionCanceler') {
+      if (selectedProduct === 'subscriptionCanceler') {
         await openSubscriptionCanceler({
-          sessionId: session,
+          sessionId,
           customization,
         });
       }
@@ -84,14 +103,20 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Pressable
-        onPress={() => onPressOpen('cardSwitcher')}
+        onPress={() => {
+          setSelectedProduct('cardSwitcher');
+          onPressOpen();
+        }}
         style={styles.button}>
         <Text style={styles.textButton}>
           {isCardSwitcherLoading ? 'Loading ...' : 'Open Card on file switcher'}
         </Text>
       </Pressable>
       <Pressable
-        onPress={() => onPressOpen('subscriptionCanceler')}
+        onPress={() => {
+          setSelectedProduct('subscriptionCanceler');
+          onPressOpen();
+        }}
         style={styles.button}>
         <Text style={styles.textButton}>
           {isSubscriptionCancelerLoading

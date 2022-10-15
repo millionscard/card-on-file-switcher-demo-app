@@ -70,6 +70,12 @@ export default function App() {
       if (product === 'subscriptionCanceler') {
         await openSubscriptionCanceler({
           sessionId: session,
+          clientId: Config.KNOTAPI_CLIENT_ID || '',
+          environment:
+            Config.KNOTAPI_ENVIRONMENT === 'production'
+              ? 'production'
+              : 'sandbox',
+          amount: true,
           customization,
         });
       }

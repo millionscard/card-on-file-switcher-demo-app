@@ -32,12 +32,19 @@ target 'KnotapiDemo' do
   end
 
   post_install do |installer|
-    react_native_post_install(
-      installer,
-      # Set `mac_catalyst_enabled` to `true` in order to apply patches
-      # necessary for Mac Catalyst builds
-      :mac_catalyst_enabled => false
-    )
+    react_native_post_install(installer)
+
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+
+      # Buildcache integration to avoid re-compiling the same code to accelerate builds.
+      # https://github.com/mikehardy/buildcache-action
+      config.build_settings["CC"] = "clang"
+      config.build_settings["LD"] = "clang"
+      config.build_settings["CXX"] = "clang++"
+      config.build_settings["LDPLUSPLUS"] = "clang++"
+    end
   end
 end

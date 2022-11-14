@@ -5796,10 +5796,15 @@ react-native-gradle-plugin@^0.70.3:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz#cbcf0619cbfbddaa9128701aa2d7b4145f9c4fc8"
   integrity sha512-oOanj84fJEXUg9FoEAQomA8ISG+DVIrTZ3qF7m69VQUJyOGYyDZmPqKcjvRku4KXlEH6hWO9i4ACLzNBh8gC0A==
 
-react-native-knotapi@^0.1.21:
-  version "0.1.21"
-  resolved "https://registry.yarnpkg.com/react-native-knotapi/-/react-native-knotapi-0.1.21.tgz#c405a7e1711016823c94b7942ffd5aa9e17003ae"
-  integrity sha512-1XKsITjE/jdaIVW1P8mA2kRpFdBynRg5IisDHHXYCBdza88V2Q/T/DwVqZl0ybMviZ3uAxiakAd9MpAbM2K3TA==
+react-native-knot-promo@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-knot-promo/-/react-native-knot-promo-0.1.2.tgz#714deed1580e3d39c1f74d914c3e3cd05b12a299"
+  integrity sha512-W/Tkc2EpVbzCDM6xcAjb+6w1lIKYhrp4YNKvQTNZ239TBs+rQGcqtcnQepLIoTKX2bWfJ2DTwCn/XOMU6xyhvA==
+
+react-native-knotapi@^0.1.24:
+  version "0.1.24"
+  resolved "https://registry.yarnpkg.com/react-native-knotapi/-/react-native-knotapi-0.1.24.tgz#1f99469240af076f358573e118161b0a777713f4"
+  integrity sha512-ozUdvka69N/7h2U0TpIRUdlK4j0yKnWQ1301TjQDpkGDMagFkicHBGCfoqosaE8d8HbAxdJB531vFoV3Rc4NpA==
 
 react-native@0.70.1:
   version "0.70.1"

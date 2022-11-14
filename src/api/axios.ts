@@ -20,7 +20,19 @@ export const registerUser = async (userData: any) => {
   return response.data;
 };
 
-export const createNewSession = async () => {
-  const response = await instance.post('/knot/session', null);
+export const createNewSession = async (
+  type: 'subscription_canceller' | 'card_switcher',
+) => {
+  const response = await instance.post('/knot/session', {type});
+  return response.data;
+};
+
+export type SubscriptionData = {
+  description: string;
+  amount: number;
+  date: string;
+};
+export const createTransaction = async (data: SubscriptionData) => {
+  const response = await instance.post('/transactions/new', data);
   return response.data;
 };

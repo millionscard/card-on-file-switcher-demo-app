@@ -2,17 +2,22 @@ import React, {useEffect, useState} from 'react';
 import {faker} from '@faker-js/faker';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {
-  openCardOnFileSwitcher,
-  openSubscriptionCanceler,
   addListener,
   eventNames,
+  openCardOnFileSwitcher,
+  openSubscriptionCanceler,
 } from 'react-native-knotapi';
-import {createNewSession, registerUser} from './api/axios';
+import {createNewSession, createTransaction, registerUser} from './api/axios';
 import Config from 'react-native-config';
+import {Popup, FullScreenModal} from 'react-native-knot-promo';
 
 export default function App() {
   const [isCardSwitcherLoading, setIsCardSwitcherLoading] = useState(false);
   const [isSubscriptionCancelerLoading, setIsSubscriptionCancelerLoading] =
+    useState(false);
+
+  const [showCardSwitcherModal, setShowCardSwitcherModal] = useState(false);
+  const [showSubscriptionCancelerModal, setShowSubscriptionCancelerModal] =
     useState(false);
   useEffect(() => {
     // @ts-ignore
@@ -54,7 +59,9 @@ export default function App() {
 
     try {
       await registerUser(useData);
-      const {session} = await createNewSession();
+      const {session} = await createNewSession(
+        product === 'cardSwitcher' ? 'card_switcher' : 'subscription_canceller',
+      );
       console.log({session});
       if (product === 'cardSwitcher') {
         await openCardOnFileSwitcher({
@@ -68,8 +75,28 @@ export default function App() {
         });
       }
       if (product === 'subscriptionCanceler') {
+        await createTransaction({
+          amount: 10,
+          description: 'Amazon',
+          date: new Date().toISOString(),
+        });
+        await createTransaction({
+          amount: 10,
+          description: 'Spotify',
+          date: new Date().toISOString(),
+        });
+        await createTransaction({
+          amount: 10,
+          description: 'Netflix',
+          date: new Date().toISOString(),
+        });
         await openSubscriptionCanceler({
           sessionId: session,
+          clientId: Config.KNOTAPI_CLIENT_ID || '',
+          environment:
+            Config.KNOTAPI_ENVIRONMENT === 'production'
+              ? 'production'
+              : 'sandbox',
           customization,
         });
       }
@@ -84,14 +111,14 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Pressable
-        onPress={() => onPressOpen('cardSwitcher')}
+        onPress={() => setShowCardSwitcherModal(true)}
         style={styles.button}>
         <Text style={styles.textButton}>
           {isCardSwitcherLoading ? 'Loading ...' : 'Open Card on file switcher'}
         </Text>
       </Pressable>
       <Pressable
-        onPress={() => onPressOpen('subscriptionCanceler')}
+        onPress={() => setShowSubscriptionCancelerModal(true)}
         style={styles.button}>
         <Text style={styles.textButton}>
           {isSubscriptionCancelerLoading
@@ -99,6 +126,27 @@ export default function App() {
             : 'Open Subscription canceler'}
         </Text>
       </Pressable>
+      <Popup
+        onGetStarted={() => {
+          setShowSubscriptionCancelerModal(false);
+          void onPressOpen('subscriptionCanceler');
+        }}
+        isVisible={showSubscriptionCancelerModal}
+        cardImage={require('./assets/card.png')}
+        primaryColor={'#5b138c'}
+        textColor={'#ffffff'}
+      />
+      <FullScreenModal
+        onClose={() => setShowCardSwitcherModal(false)}
+        onDone={() => {
+          setShowCardSwitcherModal(false);
+          void onPressOpen('cardSwitcher');
+        }}
+        isVisible={showCardSwitcherModal}
+        cardImage={require('./assets/card.png')}
+        primaryColor={'#5b138c'}
+        textColor={'#ffffff'}
+      />
     </View>
   );
 }
@@ -119,5 +167,14 @@ const styles = StyleSheet.create({
   },
   textButton: {
     color: '#fff',
+  },
+  input: {
+    width: '80%',
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    borderColor: '#d3d2d2',
+    borderRadius: 4,
+    padding: 10,
   },
 });

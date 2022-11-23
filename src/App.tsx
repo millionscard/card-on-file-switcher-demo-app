@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {faker} from '@faker-js/faker';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {
-  addListener,
+  addCardSwitcherListener,
+  addSubscriptionCancelerListener,
   eventNames,
   openCardOnFileSwitcher,
   openSubscriptionCanceler,
@@ -20,13 +21,21 @@ export default function App() {
   const [showSubscriptionCancelerModal, setShowSubscriptionCancelerModal] =
     useState(false);
   useEffect(() => {
-    // @ts-ignore
-    const listener = addListener(eventNames.onEvent, event => {
-      console.log({event});
-    });
+    const cardSwitcherListener = addCardSwitcherListener(
+      eventNames.onEvent,
+      event => {
+        console.log({event});
+      },
+    );
+    const cancelerListener = addSubscriptionCancelerListener(
+      eventNames.onEvent,
+      event => {
+        console.log({event});
+      },
+    );
     return () => {
-      // @ts-ignore
-      listener?.remove();
+      cardSwitcherListener?.remove();
+      cancelerListener?.remove();
     };
   }, []);
 

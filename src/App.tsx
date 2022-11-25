@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {faker} from '@faker-js/faker';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {
@@ -39,6 +39,48 @@ export default function App() {
     };
   }, []);
 
+  const switcherSession = useRef('');
+  const cancelerSession = useRef('');
+
+  const init = useCallback(async () => {
+    const useData = {
+      first_name: faker.name.firstName(),
+      last_name: faker.name.lastName(),
+      email: faker.internet.email(),
+      phone_number: faker.phone.number('##########'),
+      password: faker.internet.password(),
+      address1: faker.address.streetAddress(),
+      address2: faker.address.secondaryAddress(),
+      state: faker.address.stateAbbr(),
+      city: faker.address.city(),
+      postal_code: faker.address.zipCode(),
+    };
+    await registerUser(useData);
+    const switcherRes = await createNewSession('card_switcher');
+    const cancelerRes = await createNewSession('subscription_canceller');
+    switcherSession.current = switcherRes.session;
+    cancelerSession.current = cancelerRes.session;
+    await createTransaction({
+      amount: 10,
+      description: 'Amazon',
+      date: new Date().toISOString(),
+    });
+    await createTransaction({
+      amount: 10,
+      description: 'Spotify',
+      date: new Date().toISOString(),
+    });
+    await createTransaction({
+      amount: 10,
+      description: 'Netflix',
+      date: new Date().toISOString(),
+    });
+  }, []);
+
+  useEffect(() => {
+    init();
+  }, [init]);
+
   const onPressOpen = async (
     product: 'cardSwitcher' | 'subscriptionCanceler',
   ) => {
@@ -53,61 +95,33 @@ export default function App() {
       textColor: '#e0e0e0',
       companyName: 'Millions',
     };
-    const useData = {
-      first_name: faker.name.firstName(),
-      last_name: faker.name.lastName(),
-      email: faker.internet.email(),
-      phone_number: faker.phone.number('##########'),
-      password: faker.internet.password(),
-      address1: faker.address.streetAddress(),
-      address2: faker.address.secondaryAddress(),
-      state: faker.address.stateAbbr(),
-      city: faker.address.city(),
-      postal_code: faker.address.zipCode(),
-    };
 
     try {
-      await registerUser(useData);
-      const {session} = await createNewSession(
-        product === 'cardSwitcher' ? 'card_switcher' : 'subscription_canceller',
-      );
-      console.log({session});
       if (product === 'cardSwitcher') {
-        await openCardOnFileSwitcher({
-          sessionId: session,
-          clientId: Config.KNOTAPI_CLIENT_ID || '',
-          environment:
-            Config.KNOTAPI_ENVIRONMENT === 'production'
-              ? 'production'
-              : 'sandbox',
-          customization,
-        });
+        setTimeout(async () => {
+          await openCardOnFileSwitcher({
+            sessionId: switcherSession.current,
+            clientId: Config.KNOTAPI_CLIENT_ID || '',
+            environment:
+              Config.KNOTAPI_ENVIRONMENT === 'production'
+                ? 'production'
+                : 'sandbox',
+            customization,
+          });
+        }, 1000);
       }
       if (product === 'subscriptionCanceler') {
-        await createTransaction({
-          amount: 10,
-          description: 'Amazon',
-          date: new Date().toISOString(),
-        });
-        await createTransaction({
-          amount: 10,
-          description: 'Spotify',
-          date: new Date().toISOString(),
-        });
-        await createTransaction({
-          amount: 10,
-          description: 'Netflix',
-          date: new Date().toISOString(),
-        });
-        await openSubscriptionCanceler({
-          sessionId: session,
-          clientId: Config.KNOTAPI_CLIENT_ID || '',
-          environment:
-            Config.KNOTAPI_ENVIRONMENT === 'production'
-              ? 'production'
-              : 'sandbox',
-          customization,
-        });
+        setTimeout(async () => {
+          await openSubscriptionCanceler({
+            sessionId: cancelerSession.current,
+            clientId: Config.KNOTAPI_CLIENT_ID || '',
+            environment:
+              Config.KNOTAPI_ENVIRONMENT === 'production'
+                ? 'production'
+                : 'sandbox',
+            customization,
+          });
+        }, 1000);
       }
     } catch (e) {
       console.log({e});
@@ -138,7 +152,7 @@ export default function App() {
       <Popup
         onGetStarted={() => {
           setShowSubscriptionCancelerModal(false);
-          void onPressOpen('subscriptionCanceler');
+          onPressOpen('subscriptionCanceler');
         }}
         isVisible={showSubscriptionCancelerModal}
         cardImage={require('./assets/card.png')}
@@ -149,7 +163,7 @@ export default function App() {
         onClose={() => setShowCardSwitcherModal(false)}
         onDone={() => {
           setShowCardSwitcherModal(false);
-          void onPressOpen('cardSwitcher');
+          onPressOpen('cardSwitcher');
         }}
         isVisible={showCardSwitcherModal}
         cardImage={require('./assets/card.png')}

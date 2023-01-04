@@ -1,13 +1,7 @@
 import axios from 'axios';
-import Config from 'react-native-config';
 
 const instance = axios.create({
   baseURL: 'https://sample.knotapi.com/api',
-  headers: {
-    Environment: Config.KNOTAPI_ENVIRONMENT,
-    'Client-Id': Config.KNOTAPI_CLIENT_ID,
-    'Client-Secret': Config.KNOTAPI_SECRET,
-  },
 });
 
 const setToken = (token: string) => {

@@ -4,7 +4,7 @@ import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {
   openCardOnFileSwitcher,
   openSubscriptionCanceler,
-  addListener,
+  addCardSwitcherListener,
   eventNames,
 } from 'react-native-knotapi';
 import {createNewSession, registerUser} from './api/axios';
@@ -16,7 +16,7 @@ export default function App() {
     useState(false);
   useEffect(() => {
     // @ts-ignore
-    const listener = addListener(eventNames.onEvent, event => {
+    const listener = addCardSwitcherListener(eventNames.onEvent, event => {
       console.log({event});
     });
     return () => {

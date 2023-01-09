@@ -5795,10 +5795,10 @@ react-native-gradle-plugin@^0.70.3:
   resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz#cbcf0619cbfbddaa9128701aa2d7b4145f9c4fc8"
   integrity sha512-oOanj84fJEXUg9FoEAQomA8ISG+DVIrTZ3qF7m69VQUJyOGYyDZmPqKcjvRku4KXlEH6hWO9i4ACLzNBh8gC0A==
 
-react-native-knotapi@^0.1.39:
-  version "0.1.39"
-  resolved "https://registry.yarnpkg.com/react-native-knotapi/-/react-native-knotapi-0.1.39.tgz#9c8f8344a308a1629e0f94bf1d045a68e92eedaf"
-  integrity sha512-46uGk4r1HzM0j5y2xR99oB14M5o3/WlS2apfBkVymHHXo64z8ZYMsE1nJNJzLrACMisa5+GVUlp2rT7BF87D+w==
+react-native-knotapi@^0.1.45:
+  version "0.1.45"
+  resolved "https://registry.yarnpkg.com/react-native-knotapi/-/react-native-knotapi-0.1.45.tgz#e8391baa49970a76a226136a4536a99db9a193bd"
+  integrity sha512-LzpryJvGIWEj8rJRqA3K8+lzKoqES2M1LP56Iv9b4u1+bkhox7ueanhqrRocvFsUGXlnU/z+Jl/BubYMyyBtDw==
 
 react-native@0.70.1:
   version "0.70.1"

@@ -12,7 +12,7 @@ PODS:
   - fmt (6.2.1)
   - glog (0.3.5)
   - hermes-engine (0.70.1)
-  - KnotAPI (0.1.45)
+  - KnotAPI (0.1.47)
   - libevent (2.1.12)
   - RCT-Folly (2021.07.22.00):
     - boost
@@ -244,8 +244,8 @@ PODS:
     - react-native-config/App (= 1.4.11)
   - react-native-config/App (1.4.11):
     - React-Core
-  - react-native-knotapi (0.1.39):
-    - KnotAPI (~> 0.1.44)
+  - react-native-knotapi (0.1.45):
+    - KnotAPI (~> 0.1.47)
     - React-Core
   - React-perflogger (0.70.1)
   - React-RCTActionSheet (0.70.1):
@@ -443,7 +443,7 @@ SPEC CHECKSUMS:
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: 9cd393f741bfa14d1d0cd90cc373e3619c0bc7ea
-  KnotAPI: ea05db6a03b518d45e1d45fd3360f29725658455
+  KnotAPI: 88b6834995882601273247119f7ebd824a57127d
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
   RCTRequired: 1b4e0388c8ad776b2d23f8135926fa4e7ddacdf4
@@ -461,7 +461,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 1363be638eccfe1aea1b10dd42e632b0397e5ec8
   React-logger: 7bd569e3857d74ed412ce0a5c51f421ff7d4ca7f
   react-native-config: bcafda5b4c51491ee1b0e1d0c4e3905bc7b56c1b
-  react-native-knotapi: 0ebd0723e864eb6921819f62887f45bedfde171b
+  react-native-knotapi: 0a53aaae02b1e50f0a2a17848ba103a80b215ddf
   React-perflogger: 48c6b363e867d64b682e84f80ca45636bd65e19c
   React-RCTActionSheet: 33c74fe5c754835e3715c300618da9aa2f7203fa
   React-RCTAnimation: 2dbf0120d4d1ab7716079b4180f2ca89c465e46b

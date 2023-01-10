@@ -14,7 +14,7 @@ export const registerUser = async (userData: any) => {
   return response.data;
 };
 
-export const createNewSession = async () => {
-  const response = await instance.post('/knot/session', null);
+export const createNewSession = async (sessionRequest: any) => {
+  const response = await instance.post('/knot/session', sessionRequest);
   return response.data;
 };

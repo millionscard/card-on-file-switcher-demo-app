@@ -52,9 +52,16 @@ export default function App() {
       postal_code: faker.address.zipCode(),
     };
 
+    const sessionRequest = {
+      type:
+        product === 'subscriptionCanceler'
+          ? 'subscription_canceller'
+          : 'card_switcher',
+    };
+
     try {
       await registerUser(useData);
-      const {session} = await createNewSession();
+      const {session} = await createNewSession(sessionRequest);
       console.log({session});
       if (product === 'cardSwitcher') {
         await openCardOnFileSwitcher({

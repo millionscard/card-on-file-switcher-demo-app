@@ -244,7 +244,7 @@ PODS:
     - react-native-config/App (= 1.4.11)
   - react-native-config/App (1.4.11):
     - React-Core
-  - react-native-knotapi (0.1.45):
+  - react-native-knotapi (0.1.46):
     - KnotAPI (~> 0.1.47)
     - React-Core
   - React-perflogger (0.70.1)
@@ -461,7 +461,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 1363be638eccfe1aea1b10dd42e632b0397e5ec8
   React-logger: 7bd569e3857d74ed412ce0a5c51f421ff7d4ca7f
   react-native-config: bcafda5b4c51491ee1b0e1d0c4e3905bc7b56c1b
-  react-native-knotapi: 0a53aaae02b1e50f0a2a17848ba103a80b215ddf
+  react-native-knotapi: 634ac9fc6f6d3723fa8968ceabe99cafc523e5dc
   React-perflogger: 48c6b363e867d64b682e84f80ca45636bd65e19c
   React-RCTActionSheet: 33c74fe5c754835e3715c300618da9aa2f7203fa
   React-RCTAnimation: 2dbf0120d4d1ab7716079b4180f2ca89c465e46b

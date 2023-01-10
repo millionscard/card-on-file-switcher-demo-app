@@ -8,7 +8,6 @@ import {
   eventNames,
 } from 'react-native-knotapi';
 import {createNewSession, registerUser} from './api/axios';
-import Config from 'react-native-config';
 
 export default function App() {
   const [isCardSwitcherLoading, setIsCardSwitcherLoading] = useState(false);
@@ -66,22 +65,16 @@ export default function App() {
       if (product === 'cardSwitcher') {
         await openCardOnFileSwitcher({
           sessionId: session,
-          clientId: Config.KNOTAPI_CLIENT_ID || '',
-          environment:
-            Config.KNOTAPI_ENVIRONMENT === 'production'
-              ? 'production'
-              : 'sandbox',
+          clientId: '3f4acb6b-a8c9-47bc-820c-b0eaf24ee771',
+          environment: 'sandbox',
           customization,
         });
       }
       if (product === 'subscriptionCanceler') {
         await openSubscriptionCanceler({
           sessionId: session,
-          clientId: Config.KNOTAPI_CLIENT_ID || '',
-          environment:
-            Config.KNOTAPI_ENVIRONMENT === 'production'
-              ? 'production'
-              : 'sandbox',
+          clientId: '3f4acb6b-a8c9-47bc-820c-b0eaf24ee771',
+          environment: 'sandbox',
           amount: true,
           customization,
         });

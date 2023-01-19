@@ -59,6 +59,7 @@ export default function App() {
     const switcherRes = await createNewSession('card_switcher');
     const cancelerRes = await createNewSession('subscription_canceller');
     switcherSession.current = switcherRes.session;
+    console.log({switcherSession: switcherSession.current});
     cancelerSession.current = cancelerRes.session;
     await createTransaction({
       amount: 10,

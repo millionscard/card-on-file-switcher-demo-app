@@ -5801,10 +5801,10 @@ react-native-knot-promo@^0.1.2:
   resolved "https://registry.yarnpkg.com/react-native-knot-promo/-/react-native-knot-promo-0.1.2.tgz#714deed1580e3d39c1f74d914c3e3cd05b12a299"
   integrity sha512-W/Tkc2EpVbzCDM6xcAjb+6w1lIKYhrp4YNKvQTNZ239TBs+rQGcqtcnQepLIoTKX2bWfJ2DTwCn/XOMU6xyhvA==
 
-react-native-knotapi@^0.1.32:
-  version "0.1.32"
-  resolved "https://registry.yarnpkg.com/react-native-knotapi/-/react-native-knotapi-0.1.32.tgz#297e2958a0dbfa48cf96821692824c37cd2d42ff"
-  integrity sha512-7txce6fsxFezIBxPbALZoaEOF1mXITn5R+CmJRiSCFZsq5pblQ6pSrPAmv34wmtJDMGv0FLjdSSUmNUJEEcCBA==
+react-native-knotapi@^0.1.47:
+  version "0.1.48"
+  resolved "https://registry.yarnpkg.com/react-native-knotapi/-/react-native-knotapi-0.1.48.tgz#e9eb8a21c63e296963d94c9e644d5c75b93c6d92"
+  integrity sha512-KLRSU2wATHm9apCEodsdfO4sFGHBS7lKYtVHgf7L/ztWW5oMs/AWlBKL+XSx+mzxNrxvdwQjbIknBPrp/iz7Lw==
 
 react-native@0.70.1:
   version "0.70.1"

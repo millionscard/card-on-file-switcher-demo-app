@@ -74,7 +74,7 @@ PODS:
   - fmt (6.2.1)
   - glog (0.3.5)
   - hermes-engine (0.70.1)
-  - KnotAPI (0.1.31)
+  - KnotAPI (0.1.47)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.1100)
   - RCT-Folly (2021.07.22.00):
@@ -307,8 +307,8 @@ PODS:
     - react-native-config/App (= 1.4.6)
   - react-native-config/App (1.4.6):
     - React-Core
-  - react-native-knotapi (0.1.32):
-    - KnotAPI (~> 0.1.31)
+  - react-native-knotapi (0.1.43):
+    - KnotAPI (~> 0.1.47)
     - React-Core
   - React-perflogger (0.70.1)
   - React-RCTActionSheet (0.70.1):
@@ -555,7 +555,7 @@ SPEC CHECKSUMS:
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: 9cd393f741bfa14d1d0cd90cc373e3619c0bc7ea
-  KnotAPI: 4b9473f2976a77a73eb2e736652c6975330d9752
+  KnotAPI: 88b6834995882601273247119f7ebd824a57127d
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
@@ -574,7 +574,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 1363be638eccfe1aea1b10dd42e632b0397e5ec8
   React-logger: 7bd569e3857d74ed412ce0a5c51f421ff7d4ca7f
   react-native-config: 7cd105e71d903104e8919261480858940a6b9c0e
-  react-native-knotapi: 2502e74346505ceab891f40b7cad7b51c3592a30
+  react-native-knotapi: cb56efa591c0188c52376d64a8e85ea384263995
   React-perflogger: 48c6b363e867d64b682e84f80ca45636bd65e19c
   React-RCTActionSheet: 33c74fe5c754835e3715c300618da9aa2f7203fa
   React-RCTAnimation: 2dbf0120d4d1ab7716079b4180f2ca89c465e46b

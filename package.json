@@ -16,7 +16,7 @@
     "react-native": "0.70.1",
     "react-native-config": "^1.4.6",
     "react-native-knot-promo": "^0.1.2",
-    "react-native-knotapi": "^0.1.32"
+    "react-native-knotapi": "^0.1.47"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

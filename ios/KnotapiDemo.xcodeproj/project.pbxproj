@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* KnotapiDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* KnotapiDemoTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-KnotapiDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-KnotapiDemo.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-KnotapiDemo-KnotapiDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-KnotapiDemo-KnotapiDemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9924D65529420C6900528308 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9924D65429420C6900528308 /* File.swift */; };
+		BC842F45779E4676CF4B8D96 /* libPods-KnotapiDemo-KnotapiDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE9FB371FFDCA65FC93FC98 /* libPods-KnotapiDemo-KnotapiDemoTests.a */; };
+		C06C361219578DC6EE2DCF66 /* libPods-KnotapiDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF77B161FF7641D37E4EA47 /* libPods-KnotapiDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,18 +37,20 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KnotapiDemo/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KnotapiDemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KnotapiDemo/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-KnotapiDemo-KnotapiDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnotapiDemo-KnotapiDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0E47C4BC3CCC8B5974177F /* Pods-KnotapiDemo-KnotapiDemoTests.debug prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnotapiDemo-KnotapiDemoTests.debug prod.xcconfig"; path = "Target Support Files/Pods-KnotapiDemo-KnotapiDemoTests/Pods-KnotapiDemo-KnotapiDemoTests.debug prod.xcconfig"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-KnotapiDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnotapiDemo.debug.xcconfig"; path = "Target Support Files/Pods-KnotapiDemo/Pods-KnotapiDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-KnotapiDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnotapiDemo.release.xcconfig"; path = "Target Support Files/Pods-KnotapiDemo/Pods-KnotapiDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-KnotapiDemo-KnotapiDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnotapiDemo-KnotapiDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-KnotapiDemo-KnotapiDemoTests/Pods-KnotapiDemo-KnotapiDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-KnotapiDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnotapiDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F824D9963E462C9220C6094 /* Pods-KnotapiDemo-KnotapiDemoTests.release prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnotapiDemo-KnotapiDemoTests.release prod.xcconfig"; path = "Target Support Files/Pods-KnotapiDemo-KnotapiDemoTests/Pods-KnotapiDemo-KnotapiDemoTests.release prod.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = KnotapiDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84DA784ED07A7CDF9969B119 /* Pods-KnotapiDemo.release prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnotapiDemo.release prod.xcconfig"; path = "Target Support Files/Pods-KnotapiDemo/Pods-KnotapiDemo.release prod.xcconfig"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-KnotapiDemo-KnotapiDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnotapiDemo-KnotapiDemoTests.release.xcconfig"; path = "Target Support Files/Pods-KnotapiDemo-KnotapiDemoTests/Pods-KnotapiDemo-KnotapiDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		9924D65329420C6800528308 /* KnotapiDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KnotapiDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		9924D65429420C6900528308 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F4C5F84EF4B359DA16E320A1 /* Pods-KnotapiDemo.debug prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnotapiDemo.debug prod.xcconfig"; path = "Target Support Files/Pods-KnotapiDemo/Pods-KnotapiDemo.debug prod.xcconfig"; sourceTree = "<group>"; };
+		FBF77B161FF7641D37E4EA47 /* libPods-KnotapiDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnotapiDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFE9FB371FFDCA65FC93FC98 /* libPods-KnotapiDemo-KnotapiDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnotapiDemo-KnotapiDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-KnotapiDemo-KnotapiDemoTests.a in Frameworks */,
+				BC842F45779E4676CF4B8D96 /* libPods-KnotapiDemo-KnotapiDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-KnotapiDemo.a in Frameworks */,
+				C06C361219578DC6EE2DCF66 /* libPods-KnotapiDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				9924D65429420C6900528308 /* File.swift */,
+				9924D65329420C6800528308 /* KnotapiDemo-Bridging-Header.h */,
 			);
 			name = KnotapiDemo;
 			sourceTree = "<group>";
@@ -104,8 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-KnotapiDemo.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-KnotapiDemo-KnotapiDemoTests.a */,
+				FBF77B161FF7641D37E4EA47 /* libPods-KnotapiDemo.a */,
+				FFE9FB371FFDCA65FC93FC98 /* libPods-KnotapiDemo-KnotapiDemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,7 +220,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -421,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				9924D65529420C6900528308 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-KnotapiDemo-KnotapiDemoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -467,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-KnotapiDemo-KnotapiDemoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = KnotapiDemoTests/Info.plist;
@@ -492,12 +500,14 @@
 			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-KnotapiDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = RCF226JZTL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = KnotapiDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "knotAPI demo";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,6 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.knotapi.rndemo;
 				PRODUCT_NAME = KnotapiDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "KnotapiDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -521,16 +532,20 @@
 			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-KnotapiDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = RCF226JZTL;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = KnotapiDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "knotAPI demo";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -538,6 +553,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.knotapi.rndemo;
 				PRODUCT_NAME = KnotapiDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "KnotapiDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -763,12 +779,14 @@
 			baseConfigurationReference = F4C5F84EF4B359DA16E320A1 /* Pods-KnotapiDemo.debug prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconProd;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = RCF226JZTL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = KnotapiDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "knotAPI demo Prod";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -781,6 +799,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.knotapi.rndemoprod;
 				PRODUCT_NAME = KnotapiDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "KnotapiDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -791,6 +810,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B0E47C4BC3CCC8B5974177F /* Pods-KnotapiDemo-KnotapiDemoTests.debug prod.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -886,16 +906,20 @@
 			baseConfigurationReference = 84DA784ED07A7CDF9969B119 /* Pods-KnotapiDemo.release prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconProd;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = RCF226JZTL;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = KnotapiDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "knotAPI demo Prod";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -903,6 +927,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.knotapi.rndemoprod;
 				PRODUCT_NAME = KnotapiDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "KnotapiDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -912,6 +937,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F824D9963E462C9220C6094 /* Pods-KnotapiDemo-KnotapiDemoTests.release prod.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = KnotapiDemoTests/Info.plist;
